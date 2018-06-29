@@ -45,10 +45,16 @@ img{
     text-align: center;
     position: absolute;
     position: absolute;
-    top: 2rem;
+    top: 1rem;
+    animation: fadeLogo 4s infinite alternate-reverse ease 0s;
 }
 
 .header__logo img{
     display: inline-block;
     width: 250px;
+}
+
+@keyframes fadeLogo{
+    from{opacity: .4}
+    to{opacity: 1}
 }
