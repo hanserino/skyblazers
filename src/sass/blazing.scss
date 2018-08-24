@@ -1,0 +1,72 @@
+@import "reset";
+$font-prefix: '/assets';
+@import 'ibm-plex/mono';
+html {
+  font-size: 7px;
+  * {
+    box-sizing: border-box;
+    line-height: 1.75;
+  }
+}
+html, body{
+  // font-size: 100%;
+  /* Sky Blazers is an in: */
+}
+
+body {
+  font-size: 2rem;
+  font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
+  font-weight: 450;
+  line-height: 1.3;
+  letter-spacing: -0.48px;
+}
+h2 {
+  font-size: 20rem;
+  font-weight: 700;
+  letter-spacing: -5.83px;
+}
+h3 {
+  font-family: 'Source Sans Pro', -apple-system, sans-serif;
+  font-weight: 400;
+  font-size: 4rem;
+  letter-spacing: 0;
+}
+#app-body {
+  max-width: 1024px;
+  margin-top: 20*0.8em;
+  header {
+    position: relative;
+    h2 {
+      position: absolute;
+      z-index: 1;
+      font-style: italic;
+      margin-top: -0.8em;
+      left: -0.4em;
+      text-transform: uppercase;
+    }
+    h3 {
+      text-decoration: underline;
+    }
+  }
+}
+[data-cross-message]::after {
+  overflow: hidden;
+  position: absolute;
+  left: -0.2em,;
+  right: 0;
+  z-index: 1;
+  -webkit-user-select: none;
+  pointer-events: none;
+  user-select: none;
+  font-size: 27vw;
+  font-style: italic;
+  font-weight: 100;
+  line-height: 1;
+  letter-spacing: -11.67px;
+  text-align: center;
+  content: attr(data-cross-message);
+  opacity: 0.15;
+  text-transform: uppercase;
+}
+
+@import "skbz-grid/skbz-flex";
