@@ -1,5 +1,5 @@
-@import "reset";
 $font-prefix: '/assets';
+@import "reset";
 @import 'ibm-plex/mono';
 html {
   font-size: 7px;
@@ -8,11 +8,13 @@ html {
     line-height: 1.75;
   }
 }
-html, body{
-  // font-size: 100%;
-  /* Sky Blazers is an in: */
+a {
+  color: #000;
+  &:hover {
+    text-decoration: none;
+    font-weight: bolder;
+  }
 }
-
 body {
   font-size: 2rem;
   font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
@@ -31,22 +33,22 @@ h3 {
   font-size: 4rem;
   letter-spacing: 0;
 }
-#app-body {
-  max-width: 1024px;
-  margin-top: 20*0.8em;
-  header {
-    position: relative;
-    h2 {
-      position: absolute;
-      z-index: 1;
-      font-style: italic;
-      margin-top: -0.8em;
-      left: -0.4em;
-      text-transform: uppercase;
+.readable {
+  h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
+    &:not(:first-child) {
+      margin-top: 2rem;
     }
-    h3 {
-      text-decoration: underline;
-    }
+  }
+}
+.logo {
+  display: inline-block;
+  margin-left: 35px;
+  width: 132px;
+  height: 120px;
+  background: url(/assets/logo/skyblazers-notagline.svg) no-repeat;
+  background-size: 131px 120px;
+  > span {
+    display: none;
   }
 }
 [data-cross-message]::after {
@@ -67,6 +69,54 @@ h3 {
   content: attr(data-cross-message);
   opacity: 0.15;
   text-transform: uppercase;
+}
+#main-header {
+  > div {
+    margin: 10rem auto auto;
+    max-width: 1024px;
+    // border: 1px dotted #f00;
+  }
+  nav {
+    margin-top: 2rem;
+    margin-left: 100px;
+    li {
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: 3em;
+      }
+    }
+  }
+}
+#main-content {
+  margin: 20*0.8em auto auto;
+  max-width: 1024px;
+  // border: 1px dotted #f00;
+  header {
+    position: relative;
+    margin-left: 100px;
+    h2 {
+      position: absolute;
+      z-index: 1;
+      font-style: italic;
+      margin-top: -1em;
+      left: -0.4em;
+      text-transform: uppercase;
+    }
+    h3 {
+      display: inline-block;
+      // text-decoration: underline;
+      border-bottom: 5px solid #000;
+    }
+  }
+}
+#main-footer {
+  margin: 10rem auto 0;
+  border-left: 5px solid #000;
+  padding: 2rem;
+  max-width: 1024px;
+  p {
+    font-size: 75%;
+  }
 }
 
 @import "skbz-grid/skbz-flex";

@@ -1,9 +1,3 @@
-.skbz-body {
-  margin: auto;
-  border: 1px dotted #f00;
-}
-.skbz-header {
-}
 .preamble {
   display: flex;
   align-content: flex-end;
@@ -12,7 +6,7 @@
   background-image: -webkit-linear-gradient(left, #72FFFF 0%, #1CFF95 100%);
   background-image: -o-linear-gradient(left, #72FFFF 0%, #1CFF95 100%);
   background-image: linear-gradient(to right, #72FFFF 0%, #1CFF95 100%);
-  max-width: 744px;
+  // max-width: 744px;
   min-height: 70rem;
   > *{
     &:nth-child(1) { order: 8; }
