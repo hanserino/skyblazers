@@ -1,5 +1,5 @@
 #app-main-content {
-  margin: 20*0.8em auto auto;
+  margin: 14vw auto auto;
   max-width: $app-max-width;
   header {
     position: relative;
@@ -86,7 +86,21 @@ ul.alternate {
 }
 
 @media screen and (max-width: #{$app-column-width * 1.5}) {
+  #app-main-content {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    header, section > .readable {
+      margin-left: 0;
+      h2 {
+        left: 0;
+      }
+    }
+  }
   ul.alternate li {
+    &.profile img {
+      width: 100px;
+      height: 100px;
+    }
     &:nth-child(odd) {
       margin-right: auto;
     }
