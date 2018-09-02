@@ -45,6 +45,9 @@ h3, h4 {
     }
   }
 }
+.large {
+  font-size: 125%;
+}
 
 @media screen and (min-width: $mquery-mobile-width * 1.75) {
   h2 {

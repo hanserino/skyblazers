@@ -29,6 +29,58 @@
     }
   }
 }
+@keyframes xfade{
+   0% { opacity: 1; }
+   33% { opacity:1; }
+   40% { opacity: 0; }
+   94% { opacity: 0; }
+   100% { opacity:1; }
+}
+.gallery {
+  height: 70rem;
+  overflow: hidden;
+  .item-container {
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    background-image: attr(data-img-src url);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    &.fx {
+      transition: filter 1s ease-out;
+      filter: grayscale(25%) contrast(75%) brightness(1.25);
+      &:hover {
+        filter: grayscale(0%) contrast(100%) brightness(1);
+      }
+    }
+    img {
+      display: none;
+    }
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      font-size: 1.5rem;
+      padding: 0.25rem 0.5rem;
+      background: rgba(200,200,200,0.8);
+    }
+  }
+  &.slideshow {
+    .item-container {
+      &:nth-of-type(1) { animation: xfade 15s linear 10s infinite; }
+      &:nth-of-type(2) { animation: xfade 15s linear 5s infinite; }
+      &:nth-of-type(3) { animation: xfade 15s linear 0s infinite; }
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}
 
 .preamble {
   display: flex;
@@ -41,7 +93,7 @@
   // max-width: 744px;
   min-height: 70rem;
   // COMBAK: This is cheating, should find a better way to bottom align the content
-  > *{
+  > * {
     &:nth-child(1) { order: 8; }
     &:nth-child(2) { order: 7; }
     &:nth-child(3) { order: 6; }
@@ -53,6 +105,10 @@
   }
   > * {
     max-width: $app-column-width;
+  }
+  .gallery {
+    max-width: calc(100% + 6rem);
+    margin: -10rem -3rem -3rem;
   }
 }
 ul.alternate {
@@ -73,7 +129,6 @@ ul.alternate {
 }
 .profile {
   display: flex;
-  flex-wrap: wrap;
   .readable > h4 + p {
     margin-top: 0;
   }
