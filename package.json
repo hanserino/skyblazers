@@ -2,11 +2,11 @@
   "name": "skyblazers",
   "version": "1.0.0",
   "description": "Sky Blazers Running website",
-  "main": "public/index.html",
+  "main": "bin/http-server",
   "scripts": {
+    "start": "http-server ./public -o -g",
     "build": "node-sass --include-path src --output-style compressed src/sass/blazing.scss public/style/blazing.min.css",
     "watch-sass": "nodemon -e scss -x \"npm run build\"",
-    "serve": "http-server ./public -o -c-1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
