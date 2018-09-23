@@ -33,7 +33,7 @@ h3, h4 {
   font-weight: 400;
 }
 .readable {
-  h1, h2, h3, h4, h5, h6, p, ul, ol, dl, table {
+  h1, h2, h3, h4, h5, h6, p, ul, ol, dl, table, figure {
     &:not(:first-child) {
       margin-top: 2rem;
     }
@@ -43,6 +43,14 @@ h3, h4 {
     td, th {
       padding-right: 1em;
     }
+  }
+  img {
+    max-width: 100%;
+  }
+
+  figcaption {
+    font-style: italic;
+    font-size: 1.5rem;
   }
 }
 .large {
