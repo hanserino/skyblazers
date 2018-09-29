@@ -160,10 +160,20 @@ ul.alternate {
     }
   }
   ul.alternate li {
-    &.profile img {
-      flex-basis: auto;
-      width: 100px;
-      height: 100px;
+    &:not(:first-child){
+      margin-top: 8rem;
+    }
+    &.profile {
+      display: block;
+      text-align: center;
+      .readable {
+        text-align: left;
+      }
+      img {
+        // flex-basis: auto;
+        width: 200px;
+        height: 200px;
+      }
     }
     &:nth-child(odd) {
       margin-right: auto;
