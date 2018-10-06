@@ -58,6 +58,11 @@ h3, h4 {
     font-style: italic;
     font-size: 1.5rem;
   }
+  .list {
+    list-style: initial;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
 }
 .large {
   font-size: 125%;
