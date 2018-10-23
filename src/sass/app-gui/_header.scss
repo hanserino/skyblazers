@@ -1,0 +1,45 @@
+#app-header {
+  .logo {
+    display: inline-block;
+    width: 132px;
+    height: 120px;
+    background: url(/assets/logo/skyblazers-notagline.svg) no-repeat;
+    background-size: 131px 120px;
+    > span {
+      display: none;
+    }
+  }
+  > div {
+    margin: 10rem auto auto;
+    max-width: $app-max-width;
+  }
+  nav {
+    margin-top: 2rem;
+    margin-left: $app-offset-left;
+    li {
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: 3em;
+      }
+    }
+  }
+}
+@media screen and (min-width: #{$app-column-width * 1.5}) {
+  .logo {
+    margin-left: 35px;
+  }
+}
+@media screen and (max-width: #{$app-column-width * 1.5}) {
+  #app-header {
+    text-align: center;
+    nav {
+      margin-left: 0;
+      li {
+        display: inline-block;
+        &:not(:last-child) {
+          margin-right: 1.2em;
+        }
+      }
+    }
+  }
+}

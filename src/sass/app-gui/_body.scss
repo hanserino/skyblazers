@@ -1,0 +1,185 @@
+#app-main-content {
+  margin: 14vw auto auto;
+  max-width: $app-max-width;
+  header {
+    position: relative;
+    margin-left: $app-offset-left;
+    h2 {
+      position: absolute;
+      z-index: 1;
+      font-style: italic;
+      margin-top: -1em;
+      left: -0.4em;
+      text-transform: uppercase;
+    }
+    h3 {
+      display: inline-block;
+      // text-decoration: underline;
+      border-bottom: 5px solid #000;
+    }
+  }
+  section {
+    margin-top: 10rem;
+    > .readable {
+      h3:first-child {
+        border-bottom: 5px solid #3EFFFF;
+      }
+      max-width: $app-column-width;
+      margin-left: $app-offset-left;
+    }
+  }
+}
+@keyframes xfade{
+   0% { opacity: 1; }
+   33% { opacity:1; }
+   40% { opacity: 0; }
+   94% { opacity: 0; }
+   100% { opacity:1; }
+}
+.gallery {
+  height: 70rem;
+  overflow: hidden;
+  .item-container {
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    background-image: attr(data-img-src url);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    &.fx {
+      transition: filter 1s ease-out;
+      filter: grayscale(25%) contrast(75%) brightness(1.25);
+      &:hover {
+        filter: grayscale(0%) contrast(100%) brightness(1);
+      }
+    }
+    img {
+      display: none;
+    }
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      font-size: 1.5rem;
+      padding: 0.25rem 0.5rem;
+      background: rgba(200,200,200,0.8);
+    }
+  }
+  &.slideshow {
+    .item-container {
+      &:nth-of-type(1) { animation: xfade 15s linear 10s infinite; }
+      &:nth-of-type(2) { animation: xfade 15s linear 5s infinite; }
+      &:nth-of-type(3) { animation: xfade 15s linear 0s infinite; }
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+
+.preamble {
+  display: flex;
+  align-content: flex-end;
+  flex-direction: column-reverse;
+  padding: 10rem 3rem 3rem;
+  background-image: -webkit-linear-gradient(left, #72FFFF 0%, #1CFF95 100%);
+  background-image: -o-linear-gradient(left, #72FFFF 0%, #1CFF95 100%);
+  background-image: linear-gradient(to right, #72FFFF 0%, #1CFF95 100%);
+  // max-width: 744px;
+  min-height: 70rem;
+  // COMBAK: This is cheating, should find a better way to bottom align the content
+  > * {
+    &:nth-child(1) { order: 8; }
+    &:nth-child(2) { order: 7; }
+    &:nth-child(3) { order: 6; }
+    &:nth-child(4) { order: 5; }
+    &:nth-child(5) { order: 4; }
+    &:nth-child(6) { order: 3; }
+    &:nth-child(7) { order: 2; }
+    &:nth-child(8) { order: 1; }
+  }
+  > * {
+    max-width: $app-column-width;
+  }
+  .gallery {
+    max-width: calc(100% + 6rem);
+    margin: -10rem -3rem -3rem;
+    > figure:not(:first-child){
+      margin-top: 0;
+    }
+  }
+}
+ul.alternate {
+  width: 100%;
+  margin-top: 10rem;
+  margin-right: $app-offset-left;
+  li {
+    &:not(:first-child) {
+      margin-top: 2rem;
+    }
+    &:nth-child(odd) {
+      margin-right: calc(100% - #{$app-column-width * 1.5});
+    }
+    &:nth-child(even) {
+      margin-left: calc(100% - #{$app-column-width * 1.5});
+    }
+  }
+}
+.profile {
+  display: flex;
+  .readable {
+    max-width: 293px;
+    > h4 + p {
+      margin-top: 0;
+    }
+  }
+  img {
+    flex-basis: 240px;
+    box-shadow: rgba(125,125,125,0.1) -10px 10px 1px;
+    width: 240px;
+    height: 240px;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: #{$app-column-width * 1.5}) {
+  #app-main-content {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    header, section > .readable {
+      margin-left: 0;
+      h2 {
+        left: 0;
+      }
+    }
+  }
+  ul.alternate li {
+    &:not(:first-child){
+      margin-top: 8rem;
+    }
+    &.profile {
+      display: block;
+      text-align: center;
+      .readable {
+        text-align: left;
+      }
+      img {
+        // flex-basis: auto;
+        width: 200px;
+        height: 200px;
+      }
+    }
+    &:nth-child(odd) {
+      margin-right: auto;
+    }
+    &:nth-child(even) {
+      margin-left: auto;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+#app-footer {
+  margin: 10rem auto 0;
+  border-left: 5px solid #000;
+  padding: 2rem;
+  max-width: $app-max-width;
+  p {
+    font-size: 75%;
+  }
+  ul {margin-top: 0; }
+  li {
+    display: inline-block;
+  }
+}

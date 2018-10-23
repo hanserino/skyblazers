@@ -1,0 +1,31 @@
+$font-prefix: '/assets';
+$app-offset-left: 100px;
+$app-max-width: 1024px;
+$app-column-width: 360px;
+$mquery-mobile-width: 414px; //iPhone+
+@import "reset";
+// @import 'ibm-plex/mono';
+@import 'common-styles';
+@import "app-gui/header";
+@import "app-gui/body";
+@import "app-gui/footer";
+
+[data-cross-message]::after {
+  overflow: hidden;
+  position: absolute;
+  left: -0.15em,;
+  right: 0;
+  z-index: 1;
+  -webkit-user-select: none;
+  pointer-events: none;
+  user-select: none;
+  font-size: 27vw;
+  font-style: italic;
+  font-weight: 100;
+  line-height: 1em;
+  letter-spacing: -0.05em;
+  text-align: center;
+  content: attr(data-cross-message);
+  opacity: 0.15;
+  text-transform: uppercase;
+}

@@ -1,0 +1,32 @@
+{
+  "name": "skyblazers",
+  "version": "1.0.0",
+  "description": "Sky Blazers Running website",
+  "main": "bin/http-server",
+  "scripts": {
+    "start": "http-server ./docs -o -g",
+    "build": "node-sass --include-path src --output-style compressed src/sass/blazing.scss docs/style/blazing.min.css",
+    "watch-sass": "nodemon -e scss -x \"npm run build\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://hefler@github.com/hanserino/skyblazers.git"
+  },
+  "author": "Sky Blazers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hanserino/skyblazers/issues"
+  },
+  "homepage": "https://github.com/hanserino/skyblazers#readme",
+  "dependencies": {
+    "@ibm/plex": "^1.1.4",
+    "http-server": "^0.11.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "node-sass": "^4.9.3",
+    "nodemon": "^1.18.3",
+    "uglify-js": "^3.4.7"
+  }
+}
