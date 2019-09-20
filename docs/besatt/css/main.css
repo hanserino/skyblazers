@@ -83,8 +83,9 @@ img{
   color: white;
   position: absolute;
   z-index: 2;
-  bottom: 2rem;
+  bottom: 1rem;
   width: 100%;
+  font-size: 1rem;
 }
 
 @media (min-width: 800px){
@@ -97,6 +98,9 @@ img{
   }
   .subtitle{
     font-size: 1rem;
+  }
+  .info {
+    bottom: 2rem;
   }
 }
 
