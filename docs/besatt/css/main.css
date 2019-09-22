@@ -20,7 +20,7 @@ a {
 
 .title, 
 .subtitle, 
-.star-container {
+.info {
   transition: 1s opacity ease-out 0s;
 }
 
@@ -43,15 +43,10 @@ a {
   opacity: 0;
   transition-delay: 1s;
 }
-.star-container{
-  opacity: 0;
-  line-height: 1.6;
-  transition-delay: 2.5s;
-}
 
 .loaded .title, 
 .loaded .subtitle, 
-.loaded .star-container {
+.loaded .info {
   opacity: 1; 
 }
 
@@ -78,7 +73,6 @@ img{
   padding: .1rem .25rem;
 }
 
-
 .info {
   color: white;
   position: absolute;
@@ -86,6 +80,8 @@ img{
   bottom: 1rem;
   width: 100%;
   font-size: 1rem;
+  opacity: 0;
+  transition-delay: 1.75s;
 }
 
 @media (min-width: 800px){
