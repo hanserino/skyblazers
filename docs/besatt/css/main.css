@@ -43,15 +43,11 @@ a {
   transition-delay: 0s;
 }
 
-p {
-  font-size: 3vw;
-  line-height: 1.55;
-}
-
 .subtitle {
   opacity: 0;
   margin: 0;
   transition-delay: 1s;
+  font-size: 1.15rem;
 }
 
 .loaded .title,
@@ -67,6 +63,7 @@ img {
 
 #poster {
   position: absolute;
+  z-index: 1;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -98,6 +95,7 @@ img {
 .screenings {
   opacity: 0;
   transition-delay: 1.75s;
+  z-index: 3;
 }
 
 .screening-dates {
@@ -112,6 +110,7 @@ img {
   background: white;
   min-height: 40vh;
   padding: 1rem;
+  box-shadow: 0 0px 10px 1px rgba(0,0,0,.5);
 }
 
 .close-btn {
@@ -122,6 +121,7 @@ img {
   background: white;
   text-transform: uppercase;
   border: none;
+  display: inline-block;
   cursor: pointer;
   border: none;
   border-radius: 50%;
@@ -130,6 +130,7 @@ img {
   line-height: 1rem;
   font-size: 1rem;
 }
+
 .screenings-btn {
   background: transparent;
   border: none;
@@ -184,7 +185,7 @@ body[data-screenings-active] .modal {
     margin-top: 4rem;
   }
   .subtitle {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .screenings {
     bottom: 2rem;
