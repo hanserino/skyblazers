@@ -1,52 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="nb">
+  <head>
+    <meta charset="utf-8" />
+    <title>Besatt - Fra Operataket til Galdhøpiggen</title>
+    <meta name="description" content="" />
+    <meta property="og:url" content="https://skyblazers.no/besatt/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Besatt" />
+    <meta
+      property="og:description"
+      content="Filmen om gærningen som løp fra Operataket til Galdhøpiggen"
+    />
+    <meta property="og:image" content="img/besatt_fb_teaser.jpg" />
 
-<head>
-  <meta charset="utf-8">
-  <title>Besatt - Fra Operataket til Galdhøpiggen</title>
-  <meta name="description" content="">
-  <meta property="og:url" content="https://skyblazers.no/besatt/" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="Besatt" />
-  <meta property="og:description" content="Filmen om gærningen som løp fra Operataket til Galdhøpiggen" />
-  <meta property="og:image" content="img/besatt_fb_teaser.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather|Josefin+Sans:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <meta name="theme-color" content="#fafafa" />
+  </head>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Merriweather|Josefin+Sans:400,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-  <meta name="theme-color" content="#fafafa">
-
-</head>
-
-<body>
-  <header>
+  <body>
+    <header>
       <h1 class="title">Besatt</h1>
-      <p class="subtitle">Filmen om gærningen som løp fra <br/> Operataket til Galdhøpiggen</p>
-  </header>
+      <p class="subtitle">
+        Filmen om gærningen som løp fra <br />
+        Operataket til Galdhøpiggen
+      </p>
+    </header>
 
-  <main>
-    <div class="info">
-      <p>Førpremiere: 04/10/2019 kl 20:00 <br> @ Skåbu Fjellhotell</p>
-    </div>
+    <main>
+      <div class="screenings">
+        <div class="next-screening">
+          <p>
+            Neste visning: 04/10/2019 kl 20:00 <br />
+            @ Skåbu Fjellhotell
+          </p>
+          <br />
+          <button onclick="screenings()" class="screenings-btn">
+            Alle visninger
+          </button>
+        </div>
 
-    <!--
-      <div class="star-container">
-          <div class="stars">
-            <p>★★★★★<br>NÅ ER DET ALVOR</p>
-          </div>
+        <div class="screening-dates">
+          <button class="close-btn" onclick="screenings()" title="lukk">
+            X
+          </button>
+          <ul>
+            <li>04/10/2019 @ Skåbu Fjellhotell ifbm <a href="https://skaabufjellmaraton.no">Skåbu Fjellmaraton</a></li>
+            <li>17/10/2019 @ <a href="https://www.toyenstartupvillage.no/">Tøyen Startup Village</a></li>
+            <li>30/11/2019 @ <a href="http://www.vippa.no/">Vippa</a></li>
+          </ul>
+        </div>
       </div>
-    -->
-      <div id="poster"></div>  
 
-  </main>
+      <div id="poster"></div>
+    </main>
 
-  <script>
+    <div class="modal" onclick="screenings()"></div>
 
-    window.onload = function () {
+    <script>
+      window.onload = function() {
         document.body.classList.add("loaded");
-    }
-    
-</script>
-</body>
+      };
+
+      function screenings(active) {
+        document.body.toggleAttribute("data-screenings-active");
+      }
+    </script>
+  </body>
 </html>

@@ -2,15 +2,21 @@ html {
   color: #32374a;
   font-size: 1em;
   line-height: 1.4;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
-body{
+body {
   background: #cfd7ec;
   text-align: center;
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
 }
 
-header{
+header {
   position: relative;
   z-index: 2;
 }
@@ -18,44 +24,48 @@ a {
   color: inherit;
 }
 
-.title, 
-.subtitle, 
-.info {
+.title,
+.subtitle,
+.screenings {
   transition: 1s opacity ease-out 0s;
 }
 
 .title {
   font-size: 15vw;
   line-height: 1;
-  margin: 2rem 0 1rem;
+  margin: 1.5rem 0 0.5rem 0;
   text-transform: uppercase;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
   letter-spacing: 4vw;
-  text-shadow: 0px 0px 10px rgba(255,255,255,0.5);
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
   opacity: 0;
   transition-delay: 0s;
-} 
+}
 
-.subtitle {
+p {
   font-size: 3vw;
   line-height: 1.55;
+}
+
+.subtitle {
   opacity: 0;
+  margin: 0;
   transition-delay: 1s;
 }
 
-.loaded .title, 
-.loaded .subtitle, 
-.loaded .info {
-  opacity: 1; 
+.loaded .title,
+.loaded .subtitle,
+.loaded .screenings {
+  opacity: 1;
 }
 
-img{
+img {
   max-width: 100%;
   height: auto;
 }
 
-#poster{
+#poster {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -64,55 +74,134 @@ img{
   width: 100%;
   text-align: center;
   font-size: 0;
-  background: transparent url('../img/trans_johannes.png') no-repeat center bottom;
+  background: transparent url("../img/trans_johannes.png") no-repeat center
+    bottom;
   background-size: contain;
 }
-.info p{
-  display: inline-block;
-  background: black;
-  padding: .1rem .25rem;
-}
 
-.info {
-  color: white;
+.next-screening {
   position: absolute;
   z-index: 2;
   bottom: 1rem;
+  left: 0;
   width: 100%;
+}
+.next-screening p {
   font-size: 1rem;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 0.2rem 0.75rem;
+  color: white;
+  margin: 0 0 0.5rem 0;
+}
+
+.screenings {
   opacity: 0;
   transition-delay: 1.75s;
 }
 
-@media (min-width: 800px){
-  #poster{
+.screening-dates {
+  display: none;
+  position: absolute;
+  z-index: 4;
+  top: 40%;
+  transform: translate(-50%, -40%);
+  left: 50%;
+  width: 90vw;
+  max-width: 500px;
+  background: white;
+  min-height: 40vh;
+  padding: 1rem;
+}
+
+.close-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-2rem, 150%);
+  background: white;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  line-height: 1rem;
+  font-size: 1rem;
+}
+.screenings-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  background: rgba(0, 0, 0, 0.75);
+  font-size: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.screening-dates ul {
+  padding: 0 0 0 1.5rem;
+  margin: 1rem 0;
+  text-align: left;
+}
+.screening-dates li {
+  margin: 0 0 1rem 0;
+}
+.screening-dates a {
+  display: inline-block;
+}
+.next-screening {
+}
+[data-screenings-active] .screening-dates {
+  display: block;
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  cursor: pointer;
+}
+
+body[data-screenings-active] .modal {
+  display: block;
+}
+
+@media (min-width: 800px) {
+  #poster {
     height: 50vh;
   }
-  .title{
+  .title {
     font-size: 8rem;
     margin-top: 4rem;
   }
-  .subtitle{
+  .subtitle {
     font-size: 1rem;
   }
-  .info {
+  .screenings {
     bottom: 2rem;
   }
 }
 
-
-@media (min-width: 1000px){
-  #poster{
+@media (min-width: 1000px) {
+  #poster {
     height: 45vh;
   }
-  .title{
+  .title {
     font-size: 10rem;
   }
-  .subtitle{
+  .subtitle {
     font-size: 1.25rem;
   }
 }
-
 
 ::-moz-selection {
   background: #242430;
