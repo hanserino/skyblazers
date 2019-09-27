@@ -121,7 +121,6 @@ img {
   background: white;
   text-transform: uppercase;
   border: none;
-  display: inline-block;
   cursor: pointer;
   border: none;
   border-radius: 50%;
@@ -129,6 +128,7 @@ img {
   height: 2rem;
   line-height: 1rem;
   font-size: 1rem;
+  -webkit-appearance: none;
 }
 
 .screenings-btn {
