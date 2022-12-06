@@ -21,7 +21,7 @@
   "homepage": "https://github.com/hanserino/skyblazers#readme",
   "dependencies": {
     "@ibm/plex": "^1.1.4",
-    "http-server": "^0.11.1"
+    "http-server": "^0.11.2"
   },
   "devDependencies": {
     "eslint": "^5.4.0",
